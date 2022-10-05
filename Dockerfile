@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ARG SBVER=7.3.3beta
 
 RUN apt update
-RUN apt install -qq -y xvfb x11vnc fluxbox supervisor xterm chromium-bsu firefox novnc websockify net-tools openjdk-17-jre openjdk-17-jre-headless fonts-symbola unzip
+RUN apt install -qq -y xvfb x11vnc fluxbox supervisor xterm libgbm-dev firefox novnc websockify net-tools openjdk-17-jre openjdk-17-jre-headless fonts-symbola unzip
 
 RUN cd /tmp && \
         wget -q https://github.com/ProjectBots/StreamRaidersBot/releases/download/v${SBVER}/StreamRaidersBot.zip && \

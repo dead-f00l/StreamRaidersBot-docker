@@ -18,7 +18,6 @@
 [encoding] {UTF-8}
       [exec] (Xterm) {xterm}
       [exec] (StreamRaidersBot) {/startBot.sh}
-      [exec] (Chromium) {chromium-browser --no-sandbox}
       [exec] (Firefox) {firefox}
 [submenu] (Editors)
       [exec]   (vi) {xterm -e vi}
