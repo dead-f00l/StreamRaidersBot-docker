@@ -24,7 +24,6 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 | --- | --- | --- |
 | -p 5901:5901 | VNC | Forward host port 5901 to port 5901 inside the container |
 | -p 6901:6901 | noVNC WebGUI | Forward host port 6901 to port 6901 inside the container |
-| -p 3389:3389 | RDP | Forward host port 3389 to port 3389 inside the container. Remove VNC_PASSWORD for this to work. |
 | -v configsV2.json:/opt/srbot/data/configsV2.json | | Mount config file inside of the docker container allowing persistence.
 | -e VARIABLE="setting" | ENV. Variables | Set the environment variables in the above section |
 
