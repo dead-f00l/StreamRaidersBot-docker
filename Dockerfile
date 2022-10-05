@@ -9,12 +9,14 @@ RUN cd /tmp && \
         wget -q https://github.com/ProjectBots/StreamRaidersBot/releases/download/v${SBVER}/StreamRaidersBot.zip && \
         unzip StreamRaidersBot.zip && \
         mkdir -p /opt/srbot && \
-        mv StreamRaidersBot_v{SBVER}/* /opt/srbot
+        mv StreamRaidersBot_v{SBVER}/* /opt/srbot && \
+        rm -fr /tmp/StreamRaidersBot*
 
 # INSTALL QUICK PATCH HERE
 ADD src/${SBVER}-patch.zip /opt/srbot/data
 RUN cd /opt/srbot/data && \
-    unzip -o ${SBVER}-patch.zip
+    unzip -o ${SBVER}-patch.zip && \
+    rm ${SBVER}-patch.zip
 
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
