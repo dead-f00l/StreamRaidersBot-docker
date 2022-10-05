@@ -72,3 +72,7 @@ docker run \
   -e VNC_PASSWORD="vncpassword" \
   srbot-docker 
 ```
+
+## Thanks
+
+A huge thanks to ProjectBots and the other contributors for creating the StreamRaidersBot software. If you use it and like it, please contribute or donate to them! (Donate links are in the software, Help > Donators).
