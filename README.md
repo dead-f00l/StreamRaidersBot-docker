@@ -55,4 +55,4 @@ docker run \
 Now open up your browser and access the IP of the device running docker on port 6901, enter the VNC_PASSWORD and you should be presented with StreamRaidersBot running in a little window inside your browser.  
 It may take a while to launch as it initializes.
 
-To setup the bot initially, you will probably want to use a VNC Client as the webclient doesn't currently allow copy and paste of content. 
+To paste into the bot using noVNC, there is an expanding menu on the left which include a button for clipboard. If you paste something into the text area this button provides, it will replace the clipboard inside the vnc window with its content. Similarly, if you copy something from the vnc window, this box will be updated to contain what was copied.
