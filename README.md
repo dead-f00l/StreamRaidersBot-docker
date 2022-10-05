@@ -31,19 +31,21 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 
 ## Running the bot
 
-First build the docker image  
+First download and then build the docker image.
 
-``` 
+```
+git clone https://github.com/dead-f00l/StreamRaidersBot-docker.git
+cd StreamRaidersBot-docker
 docker build -t srbot-docker .
 ```
 
-Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first!), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also increase subsequent start times)
+Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first in your current directory), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also increase subsequent start times)
 
 ``` 
 docker run \
   --rm \
   -d \
-  -v configsV2.json:/opt/srbot/data/configsV2.json \
+  -v $(pwd)/configsV2.json:/opt/srbot/data/configsV2.json \
   -p 6901:6901 \ 
   -e VNC_PASSWORD="vncpassword" \
   srbot-docker 
