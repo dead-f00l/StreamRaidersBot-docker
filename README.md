@@ -7,6 +7,13 @@ Currently using 7.2.1 with all patches applied up to 2022/10/04 Gladiator fix.
 
 ---
 
+## Warning
+
+It is strongly recommended to not have any of the ports used in this container opened directly to the Internet. Ideally it would be on a private network that you VPN into.  
+Opening these ports to the wider internet is done so at your own risk.
+
+---
+
 ## Environment Variables
 
 Options that can be passed to modify configs inside of the container at runtime
