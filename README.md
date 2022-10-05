@@ -39,7 +39,7 @@ cd StreamRaidersBot-docker
 docker build -t srbot-docker .
 ```
 
-Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first in your current directory), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also increase subsequent start times)
+Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first in your current directory), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also decrease subsequent start times)
 
 ``` 
 docker run \
