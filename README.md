@@ -22,6 +22,7 @@ Options that can be passed to modify configs inside of the container at runtime
 | -------- | ----------- |
 | VNC_PASSWORD | Set the password required to access the container over VNC. |
 | RESOLUTION | Set the resolution of the display inside the container (Default: "1024x768") |
+| TZ | Set the timezone in the container. [Timezone Options](https://manpages.ubuntu.com/manpages/focal/man3/DateTime::TimeZone::Catalog.3pm.html) |
 
 ## Parameters
 
