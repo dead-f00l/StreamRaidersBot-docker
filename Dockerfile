@@ -16,7 +16,7 @@ ADD src/${SBVER}-patch.zip /opt/srbot/data
 RUN cd /opt/srbot/data && \
     unzip -o ${SBVER}-patch.zip
 
-RUN ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html
+RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 ADD src/supervisord.conf /etc/supervisord.conf
 ADD src/xrdp.ini /etc/xrdp/xrdp.ini
