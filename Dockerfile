@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ARG SBVER=7.2.1beta
+ARG SBVER=7.3.3beta
 
 RUN apt update
 RUN apt install -qq -y xvfb x11vnc fluxbox supervisor xterm chromium-bsu firefox xrdp novnc websockify net-tools default-jre default-jre-headless fonts-symbola unzip
