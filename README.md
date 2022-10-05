@@ -53,19 +53,19 @@ It may take a while to launch as it initializes.
 
 To paste into the bot using noVNC, there is an expanding menu on the left which include a button for clipboard. If you paste something into the text area this button provides, it will replace the clipboard inside the vnc window with its content. Similarly, if you copy something from the vnc window, this box will be updated to contain what was copied.
 
-To easily extract your current config out from the container to include it later if you need to destroy the current container, run the below command which will pull the config out to your current directory. (Remove the V2 in 7.3.x versions)
+To easily extract your current config out from the container to include it later if you need to destroy the current container, run the below command which will pull the config out to your current directory.
 
 ```
-docker cp srbot:/opt/srbot/data/configsV2.json .
+docker cp srbot:/opt/srbot/data/configs.json .
 ```
 
-This config can then be included in subsequent runs by using the below command instead of the first. Remember to remove both V2 from the configs line if running 7.3.x.
+This config can then be included in subsequent runs by using the below command instead of the first.
 
 ``` 
 docker run \
   -d \
   --name srbot \
-  -v $(pwd)/configsV2.json:/opt/srbot/data/configsV2.json
+  -v $(pwd)/configs.json:/opt/srbot/data/configs.json
   -p 6901:6901 \
   -e VNC_PASSWORD="vncpassword" \
   deadf00l/streamraidersbot
