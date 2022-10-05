@@ -37,7 +37,7 @@ First build the docker image
 docker build -t srbot-docker .
 ```
 
-Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first!), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped.
+Then run the docker image. The below command will mount the config file inside the docker (make sure it exists first!), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also increase subsequent start times)
 
 ``` 
 docker run \
@@ -48,3 +48,6 @@ docker run \
   -e VNC_PASSWORD="vncpassword" \
   srbot-docker 
 ```
+
+Now open up your browser and access the IP of the device running docker on port 6901, enter the VNC_PASSWORD and you should be presented with StreamRaidersBot running in a little window inside your browser.  
+It may take a while to launch as it initializes.
