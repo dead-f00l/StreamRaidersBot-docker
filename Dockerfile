@@ -19,7 +19,6 @@ RUN cd /opt/srbot/data && \
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 ADD src/supervisord.conf /etc/supervisord.conf
-ADD src/xrdp.ini /etc/xrdp/xrdp.ini
 ADD src/menu /root/.fluxbox/menu
 ADD src/entry.sh /entry.sh
 ADD src/startBot.sh /startBot.sh
