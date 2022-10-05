@@ -24,7 +24,6 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 | --- | --- | --- |
 | -p 5901:5901 | VNC | Forward host port 5901 to port 5901 inside the container |
 | -p 6901:6901 | noVNC WebGUI | Forward host port 6901 to port 6901 inside the container |
-| -p 3389:3389 | RDP | Forward host port 3389 to port 3389 inside the container |
 | -v configs.json:/opt/srbot/data/configs.json | | Mount config file inside of the docker container allowing persistence.
 | -e VARIABLE="setting" | ENV. Variables | Set the environment variables in the above section |
 
@@ -72,3 +71,7 @@ docker run \
   -e VNC_PASSWORD="vncpassword" \
   srbot-docker 
 ```
+
+## Thanks
+
+A huge thanks to ProjectBots and the other contributors for creating the StreamRaidersBot software. If you use it and like it, please contribute or donate to them! (Donate links are in the software, Help > Donators).
