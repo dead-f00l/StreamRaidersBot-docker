@@ -24,7 +24,7 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 | --- | --- | --- |
 | -p 5901:5901 | VNC | Forward host port 5901 to port 5901 inside the container |
 | -p 6901:6901 | noVNC WebGUI | Forward host port 6901 to port 6901 inside the container |
-| -p 3389:3389 | RDP | Forward host port 3389 to port 3389 inside the container |
+| -p 3389:3389 | RDP | Forward host port 3389 to port 3389 inside the container. Remove VNC_PASSWORD for this to work. |
 | -v configsV2.json:/opt/srbot/data/configsV2.json | | Mount config file inside of the docker container allowing persistence.
 | -e VARIABLE="setting" | ENV. Variables | Set the environment variables in the above section |
 
@@ -53,3 +53,5 @@ docker run \
 
 Now open up your browser and access the IP of the device running docker on port 6901, enter the VNC_PASSWORD and you should be presented with StreamRaidersBot running in a little window inside your browser.  
 It may take a while to launch as it initializes.
+
+To paste into the bot using noVNC, there is an expanding menu on the left which include a button for clipboard. If you paste something into the text area this button provides, it will replace the clipboard inside the vnc window with its content. Similarly, if you copy something from the vnc window, this box will be updated to contain what was copied.
