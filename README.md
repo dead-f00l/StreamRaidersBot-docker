@@ -38,15 +38,7 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 
 ## Running the bot
 
-First download and then build the docker image. If you wish to use a specific version, after the cd command run `git checkout versionHere` for example `git checkout v7.2.1beta`. The main branch should normally be setup to match the latest version of StreamRaidersBot
-
-```
-git clone https://github.com/dead-f00l/StreamRaidersBot-docker.git
-cd StreamRaidersBot-docker
-docker build -t srbot-docker .
-```
-
-Then run the docker image. The below command will will be the basic command you can run to get started. It will forward the port 6901 on the host to the noVNC service inside the container, and set the VNC password to "vncpassword".  The first run may take a little while to "Initialize" but as long as you don't destroy the container, subsequent runs will be quicker and your config will persist.
+The below command will will be the basic command you can run to get started. It will forward the port 6901 on the host to the noVNC service inside the container, and set the VNC password to "vncpassword".  The first run may take a little while to "Initialize" but as long as you don't destroy the container, subsequent runs will be quicker and your config will persist.
 
 ``` 
 docker run \
@@ -54,7 +46,7 @@ docker run \
   --name srbot \
   -p 6901:6901 \
   -e VNC_PASSWORD="vncpassword" \
-  srbot-docker 
+  deadf00l/streamraidersbot:v7.2.1beta
 ```
 
 Now open up your browser and access the IP of the device running docker on port 6901, enter the VNC_PASSWORD and you should be presented with StreamRaidersBot running in a little window inside your browser.  
@@ -68,7 +60,7 @@ To easily extract your current config out from the container to include it later
 docker cp srbot:/opt/srbot/data/configsV2.json .
 ```
 
-This config can then be included in subsequent runs by using the below command instead of the first
+This config can then be included in subsequent runs by using the below command instead of the first.
 
 ``` 
 docker run \
@@ -77,7 +69,7 @@ docker run \
   -v $(pwd)/configsV2.json:/opt/srbot/data/configsV2.json
   -p 6901:6901 \
   -e VNC_PASSWORD="vncpassword" \
-  srbot-docker 
+  deadf00l/streamraidersbot:v7.2.1beta
 ```
 
 ## Thanks
