@@ -31,7 +31,7 @@ Parameters used for setting up the bot. These are usually port assignments to fo
 
 ## Running the bot
 
-First download and then build the docker image.
+First download and then build the docker image. If you wish to use a specific version, after the cd command run `git checkout versionHere` for example `git checkout v7.2.1beta`. The main branch should normally be setup to match the latest version of StreamRaidersBot
 
 ```
 git clone https://github.com/dead-f00l/StreamRaidersBot-docker.git
