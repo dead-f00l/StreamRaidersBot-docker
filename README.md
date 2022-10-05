@@ -39,15 +39,13 @@ cd StreamRaidersBot-docker
 docker build -t srbot-docker .
 ```
 
-Then run the docker image. The below command will mount the config file inside the docker (this will need to be an existing config), forward the port 6901 to the noVNC service inside the container, and set the VNC password to "vncpassword". This will also remove the container once it is stopped. (remove the --rm line to stop this, this will also decrease subsequent start times)
+Then run the docker image. The below command will will be the basic command you can run to get started. It will forward the port 6901 on the host to the noVNC service inside the container, and set the VNC password to "vncpassword".  The first run may take a little while to "Initialize" but as long as you don't destroy the container, subsequent runs will be quicker and your config will persist.
 
 ``` 
 docker run \
-  --rm \
   -d \
-  -v $(pwd)/configs.json:/opt/srbot/data/configs.json \
-  -p 5901:5901 \
-  -p 6901:6901 \ 
+  --name srbot \
+  -p 6901:6901 \
   -e VNC_PASSWORD="vncpassword" \
   srbot-docker 
 ```
@@ -56,3 +54,21 @@ Now open up your browser and access the IP of the device running docker on port 
 It may take a while to launch as it initializes.
 
 To paste into the bot using noVNC, there is an expanding menu on the left which include a button for clipboard. If you paste something into the text area this button provides, it will replace the clipboard inside the vnc window with its content. Similarly, if you copy something from the vnc window, this box will be updated to contain what was copied.
+
+To easily extract your current config out from the container to include it later if you need to destroy the current container, run the below command which will pull the config out to your current directory.
+
+```
+docker cp srbot:/opt/srbot/data/configs.json .
+```
+
+This config can then be included in subsequent runs by using the below command instead of the first
+
+``` 
+docker run \
+  -d \
+  --name srbot \
+  -v $(pwd)/configs.json:/opt/srbot/data/configs.json
+  -p 6901:6901 \
+  -e VNC_PASSWORD="vncpassword" \
+  srbot-docker 
+```
