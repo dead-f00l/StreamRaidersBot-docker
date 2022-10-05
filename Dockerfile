@@ -9,7 +9,7 @@ RUN cd /tmp && \
         wget -q https://github.com/ProjectBots/StreamRaidersBot/releases/download/v${SBVER}/StreamRaidersBot.zip && \
         unzip StreamRaidersBot.zip && \
         mkdir -p /opt/srbot && \
-        mv StreamRaidersBot_v{SBVER}/* /opt/srbot && \
+        mv StreamRaidersBot_v${SBVER}/* /opt/srbot && \
         rm -r /tmp/StreamRaidersBot*
 
 # INSTALL QUICK PATCH HERE
