@@ -65,7 +65,7 @@ This config can then be included in subsequent runs by using the below command i
 docker run \
   -d \
   --name srbot \
-  -v $(pwd)/configs.json:/opt/srbot/data/configs.json
+  -v $(pwd)/configs.json:/opt/srbot/data/configs.json \
   -p 6901:6901 \
   -e VNC_PASSWORD="vncpassword" \
   deadf00l/streamraidersbot
