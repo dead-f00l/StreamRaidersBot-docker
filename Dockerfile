@@ -10,7 +10,8 @@ RUN cd /tmp && \
         unzip StreamRaidersBot.zip && \
         mkdir -p /opt/srbot && \
         mv StreamRaidersBot_v${SBVER}/* /opt/srbot && \
-        rm -r /tmp/StreamRaidersBot*
+        rm -r /tmp/StreamRaidersBot* && \
+        rm -r /opt/srbot/jdk*
 
 # INSTALL QUICK PATCH HERE
 ADD src/${SBVER}-patch.zip /opt/srbot/data
