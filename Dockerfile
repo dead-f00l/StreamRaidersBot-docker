@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install -qq -y xvfb x11vnc fluxbox supervisor xterm libgbm-dev firefox novnc websockify net-tools openjdk-17-jre openjdk-17-jre-headless fonts-symbola unzip
 
-ARG SBVER=7.4.2beta
+ARG SBVER=7.4.3beta
 
 RUN cd /tmp && \
         wget -q https://github.com/ProjectBots/StreamRaidersBot/releases/download/v${SBVER}/StreamRaidersBot.zip && \

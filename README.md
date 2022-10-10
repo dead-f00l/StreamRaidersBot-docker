@@ -3,7 +3,7 @@ A docker container that runs [StreamRaidersBot](https://github.com/ProjectBots/S
 
 Image derived from [soff/tiny-remote-desktop](https://hub.docker.com/r/soff/tiny-remote-desktop)  
 
-Currently using 7.4.2beta.
+Currently using 7.4.3beta.
 
 ---
 
